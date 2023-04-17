@@ -30,13 +30,13 @@ function checkForPalindrome(message) {
   }
 
   if (forwardMessage == reverseMessage) {
-    document.getElementById("alert").classList.remove("d-none");
-    document.getElementById("alert").classList.remove("alert-danger");
+    document.getElementById("noPalindrome").classList.add("d-none");
+    document.getElementById("yesPalindrome").classList.remove("d-none");
     checkPalindrome += reverseMessage;
   } else {
-    document.getElementById("alert").classList.remove("d-none");
-    document.getElementById("alert").classList.remove("alert-success");
-    checkPalindrome += reverseMessage;
+    document.getElementById("yesPalindrome").classList.add("d-none");
+    document.getElementById("noPalindrome").classList.remove("d-none");
+    checkPalindrome += "Check out your message reversed: " + reverseMessage;
   }
 
   return checkPalindrome;
@@ -46,6 +46,7 @@ function checkForPalindrome(message) {
 //View function
 function displayResults(checkPalindrome) {
   document.getElementById("msg").textContent = checkPalindrome;
+  document.getElementById("msg2").textContent = checkPalindrome;
 }
 
 // Swal.fire({
